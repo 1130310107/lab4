@@ -1,0 +1,99 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title>修改图书信息</title>
+		<link href="{% static "css\bootstrap-theme.css" %}" rel="stylesheet">
+		<link href="{% static "css\bootstrap-theme.min.css" %}" rel="stylesheet">
+		<link href="{% static "css\bootstrap.css" %}" rel="stylesheet">
+		<link href="{% static "css\bootstrap.min.css" %}" rel="stylesheet">
+		<script src="{% static "js\bootstrap.js" %}"></script>
+		<script src="{% static "js\bootstrap.min.js" %}"></script></head>
+	<body>
+		
+	<div class="container">
+		<div class="row clearfix">
+			<div class="col-md-12 column">
+				<div class="page-header">
+					<h1>
+						图书管理系统 <small>修改图书信息</small>
+					</h1>
+					<ul class="nav nav-tabs">
+				<li>
+					 <a href="/homepage/">主页</a>
+				</li>
+				<li>
+					 <a href="/booklist/">查看图书信息</a>
+				</li>
+				<li>
+					 <a href="/addbook/">增加图书信息</a>
+				</li>
+				<li>
+					 <a href="/addauthor/">增加作者信息</a>
+				</li>
+				</ul>
+				</div>
+			</div>
+		</div>
+		<div class="row clearfix">
+			<div class="col-md-2 column">
+			</div>
+			<div class="col-md-6 column">
+				<form method="POST" role="form" class="form-horizontal">
+				<div class="form-group">
+					<label for="id_name" class="col-md-3 control-label">书名：</label>
+					<div class="col-md-9">
+						<input type="text" class="form-control" required name="title" value="{{book.title}}">
+					</div>	
+				</div>
+
+				<div class="form-group">
+					<label for="id_author" class="col-md-3 control-label">ISBN：</label>
+					<div class="col-md-9">
+						<input type="text" class="form-control" required name="isbn" value="{{book.isbn}}">
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label for="id_typ" class="col-md-3 control-label">作者：</label>
+					<div class="col-md-9">
+						<input type="text" class="form-control" required name="author" value="{{book.author.name}}">
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label for="id_typ" class="col-md-3 control-label">出版社：</label>
+					<div class="col-md-9">
+						<input type="text" class="form-control" required name="publisher" value="{{book.publisher}}">
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label for="id_pubdate" class="col-md-3 control-label">出版日期：</label>
+					<div class="col-md-9">
+						<input type="datetime-local" class="form-control" required name="publish_date" value="{{book.publish_date}}">
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label for="id_price" class="col-md-3 control-label">定价：</label>
+					<div class="col-md-9">
+						<input type="text" class="form-control" required name="price" value="{{book.price}}">
+					</div>
+				</div>
+
+
+				<div class="form-group">
+					<div class="col-md-4 col-md-offset-4">
+						<button class="btn btn btn-primary btn-block" type="submit">提交</button>
+					</div>
+				</div>
+				</form>
+			</div>
+		</div>
+	</div>
+
+	</body>
+</html>
